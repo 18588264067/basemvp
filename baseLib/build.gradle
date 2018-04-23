@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion '27.0.3'
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     useLibrary 'org.apache.http.legacy'
 
     compileOptions {
@@ -113,7 +113,8 @@ dependencies {
     api rootProject.ext.dependencies["gson"]
     //test
     api rootProject.ext.dependencies["timber"]
-    testApi rootProject.ext.dependencies["junit"]
+    implementation project(':selectPicLib')
+    implementation project(':logger')
 }
 
 

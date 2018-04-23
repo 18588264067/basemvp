@@ -18,11 +18,11 @@ package com.aikaichuang.app;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.aikaichuang.model.entity.TestUser;
 import com.google.gson.reflect.TypeToken;
 import com.jess.arms.http.GlobalHttpHandler;
 import com.jess.arms.http.log.RequestInterceptor;
 import com.jess.arms.utils.ArmsUtils;
-import com.aikaichuang.model.entity.User;
 
 import java.util.List;
 
@@ -54,8 +54,8 @@ public class GlobalHttpHandlerImpl implements GlobalHttpHandler {
 
         if (!TextUtils.isEmpty(httpResult) && RequestInterceptor.isJson(response.body().contentType())) {
             try {
-                List<User> list = ArmsUtils.obtainAppComponentFromContext(context).gson().fromJson(httpResult, new TypeToken<List<User>>() {}.getType());
-                User user = list.get(0);
+                List<TestUser> list = ArmsUtils.obtainAppComponentFromContext(context).gson().fromJson(httpResult, new TypeToken<List<TestUser>>() {}.getType());
+                TestUser user = list.get(0);
                 Timber.w("Result ------> " + user.getLogin() + "    ||   Avatar_url------> " + user.getAvatarUrl());
             } catch (Exception e) {
                 e.printStackTrace();

@@ -15,7 +15,7 @@
  */
 package com.aikaichuang.model.api.cache;
 
-import com.aikaichuang.model.entity.User;
+import com.aikaichuang.model.entity.TestUser;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -39,5 +39,5 @@ import io.rx_cache2.internal.RxCache;
 public interface CommonCache {
 
     @LifeCache(duration = 2, timeUnit = TimeUnit.MINUTES)
-    Observable<Reply<List<User>>> getUsers(Observable<List<User>> users, DynamicKey idLastUserQueried, EvictProvider evictProvider);
+    Observable<Reply<List<TestUser>>> getUsers(Observable<List<TestUser>> users, DynamicKey idLastUserQueried, EvictProvider evictProvider);
 }

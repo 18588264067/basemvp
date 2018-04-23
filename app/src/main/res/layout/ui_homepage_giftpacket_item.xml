@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="260px"
+    android:padding="20px">
+
+    <ImageView
+        android:id="@+id/giftId"
+        android:layout_width="280px"
+        android:layout_height="200px"
+        android:scaleType="center"
+        android:src="@drawable/ico_banner" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200px"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20px"
+        android:layout_toRightOf="@+id/giftId">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30px"
+            android:textColor="@color/normaltextblack"
+            android:text="36元流量合约套餐"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/gray99"
+            android:layout_marginTop="20px"
+            android:layout_marginBottom="20px"
+            android:text="100分钟国内通话 /  3G+3G闲时省内流量 / 两个月0元6G eUHD流量"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥36.00"
+                android:textColor="@color/red"
+                android:textSize="30px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24px"
+                android:textColor="@color/gray99"
+                android:text="832人已办理"
+                android:layout_marginLeft="20px"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

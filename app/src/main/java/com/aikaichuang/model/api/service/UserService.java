@@ -15,7 +15,7 @@
  */
 package com.aikaichuang.model.api.service;
 
-import com.aikaichuang.model.entity.User;
+import com.aikaichuang.model.entity.TestUser;
 
 import java.util.List;
 
@@ -40,5 +40,5 @@ public interface UserService {
 
     @Headers({HEADER_API_VERSION})
     @GET("/users")
-    Observable<List<User>> getUsers(@Query("since") int lastIdQueried, @Query("per_page") int perPage);
+    Observable<List<TestUser>> getUsers(@Query("since") int lastIdQueried, @Query("per_page") int perPage);
 }

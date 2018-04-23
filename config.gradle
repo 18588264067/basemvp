@@ -18,7 +18,10 @@ ext {
                    rxlifecycleSdkVersion   : "1.0",
                    rxlifecycle2SdkVersion  : "2.2.1",
                    espressoSdkVersion      : "3.0.1",
-                   canarySdkVersion        : "1.5.4"
+                   canarySdkVersion        : "1.5.4",
+                   bannerVersion           : "1.4.9",
+                   retrolambdaVersion      : "3.2.5",
+                   supportAnnotationsVersion      : "27.1.0"
         ]
 
     dependencies = [
@@ -90,10 +93,11 @@ ext {
                 "progressmanager"          : "me.jessyan:progressmanager:1.5.0",
                 "retrofit-url-manager"     : "me.jessyan:retrofit-url-manager:1.1.0",
                 "lifecyclemodel"           : "me.jessyan:lifecyclemodel:1.0.1",
+                "banner"                   : "com.youth.banner:banner:${version["bannerVersion"]}",
+                "supportAnnotations"       : "com.android.support:support-annotations:${version["supportAnnotationsVersion"]}",
+
 
                 //test
-                "junit"                    : "junit:junit:4.12",
-                "androidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",
                 "runner"                   : "com.android.support.test:runner:1.0.1",
                 "espresso-core"            : "com.android.support.test.espresso:espresso-core:${version["espressoSdkVersion"]}",
                 "espresso-contrib"         : "com.android.support.test.espresso:espresso-contrib:${version["espressoSdkVersion"]}",
@@ -103,7 +107,8 @@ ext {
                 "logger"                   : "com.orhanobut:logger:2.1.1",
                 "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
                 "canary-release"           : "com.squareup.leakcanary:leakcanary-android-no-op:${version["canarySdkVersion"]}",
-                "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1"
+                "umeng-analytics"          : "com.umeng.analytics:analytics:6.0.1",
+
         ]
 
 

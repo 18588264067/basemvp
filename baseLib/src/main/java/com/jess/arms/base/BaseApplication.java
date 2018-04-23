@@ -19,11 +19,18 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jess.arms.base.delegate.AppDelegate;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.Preconditions;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.FormatStrategy;
+import com.orhanobut.logger.Logger;
+import com.orhanobut.logger.PrettyFormatStrategy;
+
+import cn.finalteam.rxgalleryfinal.utils.ModelUtils;
 
 /**
  * ================================================
@@ -55,6 +62,19 @@ public class BaseApplication extends Application implements App {
     @Override
     public void onCreate() {
         super.onCreate();
+        FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
+                .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
+                .methodCount(0)         // (Optional) How many method line to show. Default 2
+                .methodOffset(3)        // (Optional) Skips some method invokes in stack trace. Default 5
+//        .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
+                .tag("cnww")   // (Optional) Custom tag for each log. Default PRETTY_LOGGER
+                .build();
+        Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+        Logger.d("logger init finish");
+
+        //打开日志
+        ModelUtils.setDebugModel(true);
+        Fresco.initialize(this);
         if (mAppDelegate != null)
             this.mAppDelegate.onCreate(this);
     }

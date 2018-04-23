@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="334px"
+    android:layout_height="550px"
+    android:orientation="vertical"
+    android:layout_marginRight="12px"
+    android:layout_marginBottom="13px"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/product"
+        android:layout_width="334px"
+        android:layout_height="334px"
+        android:scaleType="fitXY"
+        android:src="@drawable/test_ico_phone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30px"
+        android:textColor="@color/normaltextblack"
+        android:layout_marginTop="30px"
+        android:layout_marginRight="21px"
+        android:layout_marginLeft="21px"
+        android:layout_marginBottom="21px"
+        android:text="华为 畅享6 金色 移动联通电信4G手机 双卡双待"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20px"
+        android:layout_marginLeft="22px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥699.00"
+            android:textColor="@color/red"
+            android:textSize="30px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24px"
+            android:textColor="@color/gray99"
+            android:text="￥1299"
+            android:layout_marginLeft="20px"/>
+
+    </LinearLayout>
+
+</LinearLayout>
