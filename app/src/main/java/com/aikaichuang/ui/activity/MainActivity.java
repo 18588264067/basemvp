@@ -1,5 +1,6 @@
 package com.aikaichuang.ui.activity;
 
+import android.Manifest;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,8 @@ import com.aikaichuang.R;
 import com.aikaichuang.ui.fragment.HomeFragment;
 import com.aikaichuang.ui.widget.tabview.TabView;
 import com.aikaichuang.ui.widget.tabview.TabViewChild;
+import com.aikaichuang.util.permission.PermissionCallBack;
+import com.aikaichuang.util.permission.PermissionChecker;
 import com.jess.arms.base.BaseActivity;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;

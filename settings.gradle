@@ -1,1 +1,1 @@
-include ':app', ':baseLib', ':refresh-layout', ':selectPicLib', ':logger'
+include ':app', ':baseLib', ':refresh-layout', ':selectPicLib', ':logger', ':bluetoothlibrary'

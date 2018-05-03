@@ -115,6 +115,7 @@ dependencies {
     api rootProject.ext.dependencies["timber"]
     implementation project(':selectPicLib')
     implementation project(':logger')
+    compile project(path: ':bluetoothlibrary')
 }
 
 

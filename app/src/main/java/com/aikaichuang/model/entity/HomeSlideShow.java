@@ -1,10 +1,12 @@
 package com.aikaichuang.model.entity;
 
+import java.io.Serializable;
+
 /**
  * Created by Scene Tang on 2018/4/17.
  */
 
-public class HomeSlideShow {
+public class HomeSlideShow implements Serializable{
     public int pic;
     public String title;
 

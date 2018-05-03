@@ -20,6 +20,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.inuker.bluetooth.library.BluetoothContext;
 import com.jess.arms.base.delegate.AppDelegate;
 import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.di.component.AppComponent;
@@ -75,6 +76,8 @@ public class BaseApplication extends Application implements App {
         //打开日志
         ModelUtils.setDebugModel(true);
         Fresco.initialize(this);
+        BluetoothContext.set(this);
+
         if (mAppDelegate != null)
             this.mAppDelegate.onCreate(this);
     }

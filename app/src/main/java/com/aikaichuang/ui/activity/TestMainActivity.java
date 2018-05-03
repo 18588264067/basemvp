@@ -27,12 +27,6 @@ public class TestMainActivity extends AppCompatActivity {
 
         //创建对象
         promptDialog = new PromptDialog(this);
-        //设置自定义属性
-        promptDialog.getDefaultBuilder()
-                .touchAble(true)
-                .round(3)
-                .loadingDuration(3000)
-                .textSize(12);
 
 
         findViewById(R.id.main_start).setOnClickListener(new View.OnClickListener() {

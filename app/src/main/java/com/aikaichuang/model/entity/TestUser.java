@@ -15,6 +15,8 @@
  */
 package com.aikaichuang.model.entity;
 
+import java.io.Serializable;
+
 /**
  * ================================================
  * TestUser 实体类
@@ -24,7 +26,7 @@ package com.aikaichuang.model.entity;
  * <a href="https://github.com/JessYanCoding">Follow me</a>
  * ================================================
  */
-public class TestUser {
+public class TestUser implements Serializable{
     private final int id;
     private final String login;
     private final String avatar_url;

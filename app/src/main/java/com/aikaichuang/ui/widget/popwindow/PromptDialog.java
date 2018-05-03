@@ -60,6 +60,11 @@ public class PromptDialog {
 
     public PromptDialog(Activity context) {
         this(Builder.getDefaultBuilder(), context);
+        getDefaultBuilder()
+                .touchAble(true)
+                .round(3)
+                .loadingDuration(3000)
+                .textSize(12);
     }
 
     public PromptDialog(Builder builder, Activity context) {

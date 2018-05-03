@@ -1,5 +1,6 @@
 package com.aikaichuang.ui.fragment;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +21,8 @@ import com.aikaichuang.di.module.HomeModule;
 import com.aikaichuang.presenter.HomePresenter;
 import com.aikaichuang.ui.adapter.HomeGiftPacketAdapter;
 import com.aikaichuang.ui.adapter.HomeProductAdapter;
-import com.aikaichuang.ui.holder.HomeProductItemHolder;
+import com.aikaichuang.util.permission.PermissionCallBack;
+import com.aikaichuang.util.permission.PermissionChecker;
 import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
@@ -30,6 +32,7 @@ import com.youth.banner.loader.ImageLoader;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by Scene Tang on 2018/4/17.
@@ -43,6 +46,9 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @BindView(R.id.viewpager)
     ViewPager viewpager;
 
+    @BindView(R.id.iv_top_bar_msg)
+    View topMsg;
+
     @BindView(R.id.giftPacketRecyclerView)
     RecyclerView giftPacketRecyclerView;
 
@@ -54,6 +60,17 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 
     @Inject
     RecyclerView.LayoutManager mLayoutManager;
+
+    PermissionChecker permissionChecker;
+
+    // 所需的全部权限
+    public static final String[] PERMISSIONS = new String[]{
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA,
+            Manifest.permission.ACCESS_NETWORK_STATE
+    };
 
     @Override
     public void setupFragmentComponent
@@ -183,5 +200,28 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @Override
     public void killMyself() {
 
+    }
+
+
+    @OnClick(R.id.iv_top_bar_msg)
+    public void topBarMsg() {
+        PermissionChecker checker = new PermissionChecker(getActivity());
+        checker.checkPermissions(new PermissionCallBack() {
+            @Override
+            public void success() {
+                showToast("ok");
+            }
+
+            @Override
+            public void onCancel() {
+                showToast("fail");
+            }
+        }, PERMISSIONS);
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }

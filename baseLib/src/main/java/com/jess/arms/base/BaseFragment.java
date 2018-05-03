@@ -22,6 +22,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.jess.arms.base.delegate.IFragment;
 import com.jess.arms.integration.cache.Cache;
@@ -94,6 +95,15 @@ public abstract class BaseFragment<P extends IPresenter> extends Fragment implem
     @Override
     public boolean useEventBus() {
         return true;
+    }
+
+    /**
+     *
+     * show toast
+     *
+     * */
+    public void showToast(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
     }
 
 }
